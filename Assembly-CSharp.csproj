@@ -55,7 +55,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\behaviours.cs" />
+     <Compile Include="Assets\Scripts\Behaviours.cs" />
+     <Compile Include="Assets\Scripts\Movimentation.cs" />
+     <Compile Include="Assets\Scripts\Wander.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/T-Gamer/Downloads/ia_project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
