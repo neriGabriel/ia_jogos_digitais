@@ -8,15 +8,12 @@ public class Pursuit : MonoBehaviour
 {
     private NavMeshAgent m_Target;
     public NavMeshAgent m_Agent;
-
-    [Header("Pursuit")]
     public float m_PursuitRadius = 4.0f;
 
     private void Awake()
     {
         m_Target = GetComponent<NavMeshAgent>();
     }
-
 
     public void pursuit(Vector3 target) {
         Vector3 direction = target - m_Target.transform.position;

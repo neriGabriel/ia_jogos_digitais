@@ -57,6 +57,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Camera\Movimentation.cs" />
      <Compile Include="Assets\Scripts\IA\Behaviours.cs" />
+     <Compile Include="Assets\Scripts\IA\Evade.cs" />
      <Compile Include="Assets\Scripts\IA\Pursuit.cs" />
      <Compile Include="Assets\Scripts\IA\Wander.cs" />
  <Reference Include="Unity.Timeline.Editor">
