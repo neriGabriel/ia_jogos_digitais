@@ -32,6 +32,7 @@ public class FlockManager : MonoBehaviour
         for(int i =0; i < m_BoidNumber; i++) 
         {
             var position = transform.position + Random.insideUnitSphere * Range;
+            
             m_Boids[i] = Instantiate(m_BoidPrefab, position, Quaternion.identity);
             m_Boids[i].GetComponent<Flock>().m_Manager = this;
             m_Boids[i].transform.parent = parent.transform;
