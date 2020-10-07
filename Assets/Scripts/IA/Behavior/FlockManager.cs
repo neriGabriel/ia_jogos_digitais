@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class FlockManager : MonoBehaviour
 {
@@ -23,10 +24,13 @@ public class FlockManager : MonoBehaviour
     [Header("Flocking")]
     public float m_Distance;
     public bool m_UseFlocking;
+
+    [Header("Agent")]
+    public NavMeshAgent mAgent;
     
 
 
-    private void Start() {
+    public void Start() {
         var parent = new GameObject($"{m_BoidPrefab.name}Parent");
         m_Boids = new GameObject[m_BoidNumber];
         for(int i =0; i < m_BoidNumber; i++) 
@@ -34,14 +38,16 @@ public class FlockManager : MonoBehaviour
             var position = transform.position + Random.insideUnitSphere * Range;
             
             m_Boids[i] = Instantiate(m_BoidPrefab, position, Quaternion.identity);
-            m_Boids[i].GetComponent<Flock>().m_Manager = this;
+            Debug.Log("Aqui chegou");
+            m_Boids[i].GetComponent<Bot>().m_Manager = this;
+            m_Boids[i].GetComponent<Bot>().m_Agent = mAgent;
             m_Boids[i].transform.parent = parent.transform;
         }
 
         m_Target = Random.insideUnitSphere * Range;
     }
 
-    private void Update() {
+    public void Update() {
         if(Random.Range(0.0f,1.0f) < 0.01f) 
             m_Target = transform.position +  Random.insideUnitSphere * Range;
     }

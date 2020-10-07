@@ -58,10 +58,11 @@
      <Compile Include="Assets\Scripts\Camera\Movimentation.cs" />
      <Compile Include="Assets\Scripts\IA\Agent\Agent.cs" />
      <Compile Include="Assets\Scripts\IA\Agent\AgentAi.cs" />
-     <Compile Include="Assets\Scripts\IA\Behavior\Evade.cs" />
-     <Compile Include="Assets\Scripts\IA\Behavior\Flock.cs" />
      <Compile Include="Assets\Scripts\IA\Behavior\FlockManager.cs" />
-     <Compile Include="Assets\Scripts\IA\Behavior\Pursuit.cs" />
+     <Compile Include="Assets\Scripts\IA\Bot\Bot.cs" />
+     <Compile Include="Assets\Scripts\IA\Bot\BotAI.cs" />
+     <Compile Include="Assets\Scripts\IA\FSM\EvadeFSM.cs" />
+     <Compile Include="Assets\Scripts\IA\FSM\FlockFSM.cs" />
      <Compile Include="Assets\Scripts\IA\FSM\PursuitFSM.cs" />
      <Compile Include="Assets\Scripts\IA\FSM\WanderFSM.cs" />
  <Reference Include="Unity.Timeline.Editor">
