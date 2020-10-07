@@ -55,15 +55,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scr.cs" />
      <Compile Include="Assets\Scripts\Camera\Movimentation.cs" />
-     <Compile Include="Assets\Scripts\IA\AgentAi.cs" />
-     <Compile Include="Assets\Scripts\IA\Behaviours.cs" />
-     <Compile Include="Assets\Scripts\IA\Evade.cs" />
-     <Compile Include="Assets\Scripts\IA\Flock.cs" />
-     <Compile Include="Assets\Scripts\IA\FlockManager.cs" />
-     <Compile Include="Assets\Scripts\IA\Pursuit.cs" />
-     <Compile Include="Assets\Scripts\IA\Wander.cs" />
+     <Compile Include="Assets\Scripts\IA\Agent\Agent.cs" />
+     <Compile Include="Assets\Scripts\IA\Agent\AgentAi.cs" />
+     <Compile Include="Assets\Scripts\IA\Behavior\Evade.cs" />
+     <Compile Include="Assets\Scripts\IA\Behavior\Flock.cs" />
+     <Compile Include="Assets\Scripts\IA\Behavior\FlockManager.cs" />
+     <Compile Include="Assets\Scripts\IA\Behavior\Pursuit.cs" />
+     <Compile Include="Assets\Scripts\IA\FSM\WanderFSM.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/T-Gamer/Downloads/ia_project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
