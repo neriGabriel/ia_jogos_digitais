@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\IA\Behavior\Flock.cs" />
      <Compile Include="Assets\Scripts\IA\Behavior\FlockManager.cs" />
      <Compile Include="Assets\Scripts\IA\Behavior\Pursuit.cs" />
+     <Compile Include="Assets\Scripts\IA\FSM\PursuitFSM.cs" />
      <Compile Include="Assets\Scripts\IA\FSM\WanderFSM.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/T-Gamer/Downloads/ia_project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
