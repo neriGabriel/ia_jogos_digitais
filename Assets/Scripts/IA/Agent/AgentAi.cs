@@ -16,6 +16,8 @@ public class AgentAi : MonoBehaviour
     void Update()
     {
         //AQUI VOU DEFINIR AS REGRAS PARA TRANSIÇÃO DE CADA BEHAVIOR
-        m_Anim.SetBool("isPursue", true);
+        if(mAgent.CanSeeTarget()) {
+            m_Anim.SetBool("isPursue", true);
+        }
     }
 }

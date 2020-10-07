@@ -18,6 +18,9 @@ public class Agent : MonoBehaviour
     public NavMeshAgent m_Target;
     public float m_PursuitRadius = 4.0f;
 
+    [Header("Line of Sight")]
+    public float m_MaxAngle = 2.0f;
+
     private void Awake()
     {
         m_Agent = GetComponent<NavMeshAgent>();
@@ -40,6 +43,21 @@ public class Agent : MonoBehaviour
         float lookAhed = direction.magnitude / (m_Target.speed + m_Agent.speed);
         float rate = Mathf.Clamp01(direction.magnitude / m_PursuitRadius);
         m_Agent.SetDestination(m_Target.transform.position + (m_Target.transform.forward * lookAhed) * rate);
+    }
+
+    public bool CanSeeTarget() {
+        // POSIÇÃO DO ALGO ATÉ MIM
+        Vector3 direction = transform.position - m_Target.transform.position;
+        // ANGULO QUE O ALVO CONSEGUE VER
+        float lookingAngle = Vector3.Angle(m_Target.transform.forward, direction);
+        // RETORNO O VALOR BOOLEANO REFERENTE AO ANGULO
+        return lookingAngle < m_MaxAngle;
+    }
+
+
+    public void OnTriggerEnter(Collider other)
+    {       
+        Destroy(other.gameObject);
     }
 
     void Update()
