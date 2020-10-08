@@ -81,8 +81,14 @@
  <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
  <HintPath>C:/Users/T-Gamer/Downloads/ia_project/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.Recorder.Editor">
+ <HintPath>C:/Users/T-Gamer/Downloads/ia_project/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/T-Gamer/Downloads/ia_project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Recorder">
+ <HintPath>C:/Users/T-Gamer/Downloads/ia_project/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Users/T-Gamer/Downloads/ia_project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
@@ -96,6 +102,9 @@
  <Reference Include="Unity.Rider.Editor">
  <HintPath>C:/Users/T-Gamer/Downloads/ia_project/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.Recorder.Base">
+ <HintPath>C:/Users/T-Gamer/Downloads/ia_project/Library/ScriptAssemblies/Unity.Recorder.Base.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.ProBuilder.AddOns.Editor">
  <HintPath>C:/Users/T-Gamer/Downloads/ia_project/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
  </Reference>
@@ -104,15 +113,6 @@
  </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>C:/Users/T-Gamer/Downloads/ia_project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Recorder.Editor">
- <HintPath>C:/Users/T-Gamer/Downloads/ia_project/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Recorder">
- <HintPath>C:/Users/T-Gamer/Downloads/ia_project/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Recorder.Base">
- <HintPath>C:/Users/T-Gamer/Downloads/ia_project/Library/ScriptAssemblies/Unity.Recorder.Base.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>D:/Microsoft VS Code/2019.3.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
