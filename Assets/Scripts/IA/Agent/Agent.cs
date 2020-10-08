@@ -7,6 +7,7 @@ public class Agent : MonoBehaviour
 {
     [Header("Agent")]
     public NavMeshAgent m_Agent;
+    public NavMeshAgent m_Target;
 
     [Header("Wander")]
     public float m_WanderRadius   = 10.0f;
@@ -15,7 +16,6 @@ public class Agent : MonoBehaviour
     private Vector3 m_WanderTarget = Vector3.zero;
 
     [Header("Pursuit")]
-    public NavMeshAgent m_Target;
     public float m_PursuitRadius = 4.0f;
 
     [Header("Line of Sight")]

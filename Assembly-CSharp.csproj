@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\IA\Bot\BotAI.cs" />
      <Compile Include="Assets\Scripts\IA\FSM\EvadeFSM.cs" />
      <Compile Include="Assets\Scripts\IA\FSM\FlockFSM.cs" />
+     <Compile Include="Assets\Scripts\IA\FSM\HideFSM.cs" />
      <Compile Include="Assets\Scripts\IA\FSM\PursuitFSM.cs" />
      <Compile Include="Assets\Scripts\IA\FSM\WanderFSM.cs" />
  <Reference Include="Unity.Timeline.Editor">
@@ -103,6 +104,15 @@
  </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>C:/Users/T-Gamer/Downloads/ia_project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Recorder.Editor">
+ <HintPath>C:/Users/T-Gamer/Downloads/ia_project/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Recorder">
+ <HintPath>C:/Users/T-Gamer/Downloads/ia_project/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Recorder.Base">
+ <HintPath>C:/Users/T-Gamer/Downloads/ia_project/Library/ScriptAssemblies/Unity.Recorder.Base.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>D:/Microsoft VS Code/2019.3.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

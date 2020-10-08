@@ -168,8 +168,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e85529043b3071f4ba27bd1751d86c06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Target: {fileID: 0}
+  m_Agent: {fileID: 0}
   m_Manager: {fileID: 0}
   m_Speed: 0
+  m_MaxAngle: 2
+  m_HideRadius: 30
+  m_HideDistance: 5
+  m_HideLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &5308782257615750772
 MonoBehaviour:
   m_ObjectHideFlags: 0

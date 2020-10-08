@@ -17,6 +17,11 @@ public class Bot : MonoBehaviour
     [Header("Line of Sight")]
     public float m_MaxAngle = 2.0f;
 
+    [Header("Hide")]
+    public float m_HideRadius = 30.0f;
+    public float m_HideDistance = 5.0f;
+    public LayerMask m_HideLayer;
+
 
     private void Awake(){
         m_Target = GetComponent<NavMeshAgent>();
@@ -127,6 +132,26 @@ public class Bot : MonoBehaviour
         float lookingAngle = Vector3.Angle(m_Agent.transform.forward, direction);
         // RETORNO O VALOR BOOLEANO REFERENTE AO ANGULO
         return lookingAngle < m_MaxAngle;
+    }
+
+    public void hide() {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 
+                              m_HideRadius,
+                              m_HideLayer);
+        float distance = Mathf.Infinity;
+        Vector3 chosenSpot = Vector3.zero;
+
+        for (int i = 0; i < colliders.Length; i++) {
+            Vector3 hideDir = colliders[i].transform.position - m_Target.transform.position;
+            Vector3 hidePos = colliders[i].transform.position + hideDir.normalized * m_HideDistance;
+
+            if (Vector3.Distance(transform.position, hidePos) < distance) {
+                chosenSpot = hidePos;
+                distance = Vector3.Distance(transform.position, hidePos);
+            }
+        }
+
+        m_Target.SetDestination(chosenSpot);
     }
 
     void Update() 
