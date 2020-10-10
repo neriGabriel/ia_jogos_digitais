@@ -7,6 +7,7 @@ public class Bot : MonoBehaviour
 {
     public NavMeshAgent m_Target;
     public NavMeshAgent m_Agent;
+    
 
     [Header("flock")]
     public FlockManager m_Manager;
@@ -84,7 +85,7 @@ public class Bot : MonoBehaviour
         Vector3 avoid = Vector3.zero;
         int groupSize = 0;
         float speed = 0.01f;
-        foreach(GameObject boid in m_Manager.m_Boids) 
+        foreach(GameObject boid in FlockManager.m_Boids) 
         {
             if(boid != this.gameObject) 
             {

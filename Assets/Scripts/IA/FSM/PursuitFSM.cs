@@ -14,6 +14,7 @@ public class PursuitFSM : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        
         mAgentAi.mAgent.pursuit(mAgentAi.mAgent.m_Agent.transform.position);
     }
 

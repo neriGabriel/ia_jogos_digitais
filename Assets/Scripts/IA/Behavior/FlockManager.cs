@@ -14,10 +14,12 @@ public class FlockManager : MonoBehaviour
     public float m_MaxRotationSpeed;
 
 
+    public static List<Bot> m_ListBot;
+
     
     [Header("Environment")]
     public float m_Radius;
-    public GameObject[] m_Boids;
+    public static GameObject[] m_Boids;
     public Vector3 m_Target;
     public float Range => m_Radius * 0.9f;
 

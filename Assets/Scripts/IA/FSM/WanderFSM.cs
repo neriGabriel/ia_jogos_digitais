@@ -16,6 +16,7 @@ public class WanderFSM : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        mAgentAi.mAgent.m_Target = FlockManager.m_Boids[1].GetComponent<Bot>().m_Target;
         mAgentAi.mAgent.wander();
     }
 
