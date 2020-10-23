@@ -39,24 +39,32 @@ public class Agent : MonoBehaviour
     }
 
     public void pursuit(Vector3 target) {
-        Vector3 direction = target - m_Agent.transform.position;
-        float lookAhed = direction.magnitude / (m_Target.speed + m_Agent.speed);
-        float rate = Mathf.Clamp01(direction.magnitude / m_PursuitRadius);
-        m_Agent.SetDestination(m_Target.transform.position + (m_Target.transform.forward * lookAhed) * rate);
+        if(m_Target != null) {
+            Vector3 direction = target - m_Agent.transform.position;
+            float lookAhed = direction.magnitude / (m_Target.speed + m_Agent.speed);
+            float rate = Mathf.Clamp01(direction.magnitude / m_PursuitRadius);
+            m_Agent.SetDestination(m_Target.transform.position + (m_Target.transform.forward * lookAhed) * rate);
+        }
     }
 
     public bool CanSeeTarget() {
-        // POSIÇÃO DO ALGO ATÉ MIM
-        Vector3 direction = transform.position - m_Target.transform.position;
-        // ANGULO QUE O ALVO CONSEGUE VER
-        float lookingAngle = Vector3.Angle(m_Target.transform.forward, direction);
-        // RETORNO O VALOR BOOLEANO REFERENTE AO ANGULO
-        return lookingAngle < m_MaxAngle;
+        if(m_Target != null){
+            // POSIÇÃO DO ALGO ATÉ MIM
+            Vector3 direction = transform.position - m_Target.transform.position;
+            // ANGULO QUE O ALVO CONSEGUE VER
+            float lookingAngle = Vector3.Angle(m_Target.transform.forward, direction);
+            // RETORNO O VALOR BOOLEANO REFERENTE AO ANGULO
+            return lookingAngle < m_MaxAngle;
+        }
+        return false;
     }
 
 
     public void OnTriggerEnter(Collider other)
-    {       
+    { 
+        FlockManager.getListBot().Remove(other.gameObject.GetComponent<Bot>());
+        Destroy(other.gameObject);
+        m_Target = FlockManager.getTarget().m_Target;
     }
 
     void Update()

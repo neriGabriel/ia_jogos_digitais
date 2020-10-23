@@ -7,6 +7,7 @@ public class Bot : MonoBehaviour
 {
     public NavMeshAgent m_Target;
     public NavMeshAgent m_Agent;
+    public int m_index;
     
 
     [Header("flock")]
@@ -155,7 +156,9 @@ public class Bot : MonoBehaviour
         m_Target.SetDestination(chosenSpot);
     }
 
-    void Update() 
-    {
+    public bool isAgentTooClose() {
+        return Vector3.Distance(m_Agent.transform.position, m_Target.transform.position) <= 50 ? true : false;
     }
+
+    
 }

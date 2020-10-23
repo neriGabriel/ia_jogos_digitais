@@ -12,9 +12,8 @@ public class FlockManager : MonoBehaviour
     public int m_BoidNumber;
     public float m_MinRotationSpeed;
     public float m_MaxRotationSpeed;
-
-
-    public static List<Bot> m_ListBot;
+    
+    public static List<Bot> m_ListBot = new List<Bot>();
 
     
     [Header("Environment")]
@@ -42,7 +41,10 @@ public class FlockManager : MonoBehaviour
             m_Boids[i] = Instantiate(m_BoidPrefab, position, Quaternion.identity);
             m_Boids[i].GetComponent<Bot>().m_Manager = this;
             m_Boids[i].GetComponent<Bot>().m_Agent = mAgent;
+            m_Boids[i].GetComponent<Bot>().m_index = i;
             m_Boids[i].transform.parent = parent.transform;
+            
+            m_ListBot.Add(m_Boids[i].GetComponent<Bot>());
         }
 
         m_Target = Random.insideUnitSphere * Range;
@@ -58,4 +60,26 @@ public class FlockManager : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawSphere(m_Target, 0.5f);
     }
+
+
+    public static List<Bot> getListBot() {
+        return m_ListBot;
+    }
+
+    public static Bot getTarget() {
+        Vector3 menor = new Vector3(999,999,999);
+        Bot newBot = null;
+
+        //EM DETERMINADO MOMENTO O BOT SOME.
+
+        foreach(Bot objBot in getListBot()) {
+            //VER COM O PROFESSOR SE TEM UM JEITO MELHOR DE COMPARAR
+             if(objBot.transform.position.x < menor.x && objBot.transform.position.z < menor.z){
+                 newBot = objBot;
+                 menor = objBot.transform.position;
+            }
+        }
+        return newBot.GetComponent<Bot>();
+    }
+
 }
