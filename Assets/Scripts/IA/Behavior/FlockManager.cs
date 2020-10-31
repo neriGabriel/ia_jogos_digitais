@@ -66,20 +66,15 @@ public class FlockManager : MonoBehaviour
         return m_ListBot;
     }
 
-    public static Bot getTarget() {
-        Vector3 menor = new Vector3(999,999,999);
-        Bot newBot = null;
-
-        //EM DETERMINADO MOMENTO O BOT SOME.
+    public static Bot getTarget(NavMeshAgent agent) {
+        Bot newBot = new Bot();
 
         foreach(Bot objBot in getListBot()) {
-            //VER COM O PROFESSOR SE TEM UM JEITO MELHOR DE COMPARAR
-             if(objBot.transform.position.x < menor.x && objBot.transform.position.z < menor.z){
-                 newBot = objBot;
-                 menor = objBot.transform.position;
+            if(Vector3.Distance(agent.transform.position, objBot.transform.position) <= 50) {
+                newBot = objBot;
             }
         }
-        return newBot.GetComponent<Bot>();
+        return newBot;
     }
 
 }

@@ -19,7 +19,7 @@ public class Agent : MonoBehaviour
     public float m_PursuitRadius = 4.0f;
 
     [Header("Line of Sight")]
-    public float m_MaxAngle = 2.0f;
+    public float m_MaxAngle = 150.0f;
 
     private void Awake()
     {
@@ -54,6 +54,8 @@ public class Agent : MonoBehaviour
             // ANGULO QUE O ALVO CONSEGUE VER
             float lookingAngle = Vector3.Angle(m_Target.transform.forward, direction);
             // RETORNO O VALOR BOOLEANO REFERENTE AO ANGULO
+            //Debug.Log("lookingAngle"+lookingAngle);
+            Debug.Log("Max angle"+m_MaxAngle);
             return lookingAngle < m_MaxAngle;
         }
         return false;
@@ -64,7 +66,7 @@ public class Agent : MonoBehaviour
     { 
         FlockManager.getListBot().Remove(other.gameObject.GetComponent<Bot>());
         Destroy(other.gameObject);
-        m_Target = FlockManager.getTarget().m_Target;
+        m_Target = FlockManager.getTarget(m_Agent).m_Target;
     }
 
     void Update()

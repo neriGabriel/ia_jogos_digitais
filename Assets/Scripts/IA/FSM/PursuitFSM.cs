@@ -11,14 +11,14 @@ public class PursuitFSM : StateMachineBehaviour
         mAgentAi = animator.gameObject.GetComponent<AgentAi>();
        
 
-        mAgentAi.mAgent.m_Target = FlockManager.getTarget().m_Target;
+        mAgentAi.mAgent.m_Target = FlockManager.getTarget(mAgentAi.mAgent.m_Agent).m_Target;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
-        mAgentAi.mAgent.m_Target = FlockManager.getTarget().m_Target;
+        mAgentAi.mAgent.m_Target = FlockManager.getTarget(mAgentAi.mAgent.m_Agent).m_Target;
         mAgentAi.mAgent.pursuit(mAgentAi.mAgent.m_Agent.transform.position);
     }
 
