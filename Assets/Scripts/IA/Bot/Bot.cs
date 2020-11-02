@@ -157,7 +157,10 @@ public class Bot : MonoBehaviour
     }
 
     public bool isAgentTooClose() {
-        return Vector3.Distance(m_Agent.transform.position, m_Target.transform.position) <= 50 ? true : false;
+        if(m_Agent != null) {
+            return Vector3.Distance(m_Agent.transform.position, m_Target.transform.position) <= 50 ? true : false;
+        }
+        return false;
     }
 
     

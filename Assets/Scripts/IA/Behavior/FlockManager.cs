@@ -20,7 +20,7 @@ public class FlockManager : MonoBehaviour
     public float m_Radius;
     public static GameObject[] m_Boids;
     public Vector3 m_Target;
-    public float Range => m_Radius * 0.9f;
+    public float Range => m_Radius * 1.0f;
 
     [Header("Flocking")]
     public float m_Distance;

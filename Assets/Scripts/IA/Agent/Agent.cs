@@ -49,13 +49,8 @@ public class Agent : MonoBehaviour
 
     public bool CanSeeTarget() {
         if(m_Target != null){
-            // POSIÇÃO DO ALGO ATÉ MIM
             Vector3 direction = transform.position - m_Target.transform.position;
-            // ANGULO QUE O ALVO CONSEGUE VER
             float lookingAngle = Vector3.Angle(m_Target.transform.forward, direction);
-            // RETORNO O VALOR BOOLEANO REFERENTE AO ANGULO
-            //Debug.Log("lookingAngle"+lookingAngle);
-            Debug.Log("Max angle"+m_MaxAngle);
             return lookingAngle < m_MaxAngle;
         }
         return false;
@@ -69,9 +64,16 @@ public class Agent : MonoBehaviour
         m_Target = FlockManager.getTarget(m_Agent).m_Target;
     }
 
+    public bool isTargetTooClose() {
+        if(m_Target != null) {
+            return Vector3.Distance(m_Target.transform.position, m_Agent.transform.position) < 100 ? true : false;
+        }
+        return false;
+    }
+
     void Update()
     {
-        
+        m_Target = FlockManager.getTarget(m_Agent).m_Target;
     }
 
 }

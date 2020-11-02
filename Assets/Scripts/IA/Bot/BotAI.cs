@@ -15,20 +15,10 @@ public class BotAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(mBot.TargetCanSeeMe()) {
-           m_Anim.SetBool("isHide", true); 
-           m_Anim.SetBool("isEvade", false);
-           m_Anim.SetBool("isFlock", false);
-        } 
-        else if(mBot.isAgentTooClose()) {
-            m_Anim.SetBool("isEvade", true);
-            m_Anim.SetBool("isFlock", false);
-            m_Anim.SetBool("isHide", false);
-        }
-        else if (!mBot.TargetCanSeeMe() && !mBot.isAgentTooClose()) {
-            m_Anim.SetBool("isFlock", true);
-            m_Anim.SetBool("isHide", false);
-            m_Anim.SetBool("isEvade", false);   
-        }
+        bool agentCanSeeMe = mBot.TargetCanSeeMe();
+        bool isAgentTooClose = mBot.isAgentTooClose();
+
+        m_Anim.SetBool("isAgentToClose", isAgentTooClose);
+        m_Anim.SetBool("AgentCanSeeMe", agentCanSeeMe);
     }
 }
